@@ -24,7 +24,7 @@
     </div>
     <div class="post-content">
       <p>
-        <%= markdown(post.body).truncate(800, :omission => "......") %><br/>
+        <%= markdown(post.body).truncate(800, :omission => "......").html_safe %><br/>
         <%= link_to 'Read More', post, class: 'btn btn-primary' %>
       </p>
     </div>
