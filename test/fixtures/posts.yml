@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  body: MyText
+  category: MyString
+  is_published: false
+  is_deleted: false
+  views: 1
+  likes: 1
+  dislikes: 1
+  total_comments: 1
+
+two:
+  title: MyString
+  body: MyText
+  category: MyString
+  is_published: false
+  is_deleted: false
+  views: 1
+  likes: 1
+  dislikes: 1
+  total_comments: 1

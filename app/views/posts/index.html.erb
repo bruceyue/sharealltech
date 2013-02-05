@@ -1,0 +1,35 @@
+<% @posts.each do |post| %>
+  <article class="blog-post">
+    <div class="row-fluid">
+        <div class="span2">
+            <a href="#" class="post-meta-date">
+                <span class="line1"><%= post.created_at.strftime('%b %d')%></span>
+                <span class="line2"><%= post.created_at.strftime('%Y')%></span>
+            </a>
+        </div>
+        <div class="span10">
+            <h3 class="post-title"><%= link_to post.title, post %></h3>
+            <ul class="post-meta">
+              <% if post.user %>
+                <li><span class="post-meta-label">By:</span> <a href="#"><%= post.user.name %></a></li>
+              <% end %>
+              <% if post.tag_list.size != 0 %>
+                <li><span class="post-meta-label">Tags:</span> <%= raw post.tags.map { |t| link_to t.name, tag_path(t.name) }.join(', ') %></li>
+              <% end %>
+              <% if post.comments.count != 0 %>
+              <li><span class="post-meta-label">Comments:</span> <%= link_to post.comments.count,  post %> Comments </li>
+              <% end %>
+            </ul>
+        </div>
+    </div>
+    <div class="post-content">
+      <p>
+        <%= markdown(post.body).truncate(800, :omission => "......").html_safe %>
+        <%= link_to 'Read More', post, class: "btn btn-primary" %>
+      </p>
+    </div>
+  </article>
+<% end %>
+<div class="pagination pagination-centered">
+  <%= will_paginate @posts, :class => "flickr_pagination" %>
+</div>

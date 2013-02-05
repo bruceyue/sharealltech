@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+	<%= form_for([@post, @post.comments.build]) do |f| %>
+	  <%= markdown(f.text_area :body, rows: 3, class: "commentbox") %>
+	  <%= f.submit "Comment", class: "btn-large", style: "float:right" %>
+	  <br/>
+	<% end %>
+<% end %>

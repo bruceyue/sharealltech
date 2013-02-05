@@ -1,0 +1,42 @@
+<%= form_for(@post) do |f| %>
+<% if @post.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@post.errors.count, "error") %>prohibited this post from being saved:
+  </h2>
+  <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<table cellspacing ="0" cellpadding ="0" class="table">
+  <tr>
+    <td>
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">
+        <%= f.label :tag_list, "Tags (separated by commas)" %>
+        <%= f.text_field :tag_list %>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">
+        <%= f.label :body %>
+        <%= f.text_area :body, rows: 8, class: "tabletd" %>
+        Markdown syntax
+        <%= f.submit "Save", class: "btn-large", style: "float:right;"%>
+      </div>
+    </td>
+  </tr>
+</table>
+<% end %>

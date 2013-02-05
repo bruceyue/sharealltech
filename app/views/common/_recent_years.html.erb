@@ -1,0 +1,31 @@
+<!-- Widget -->
+<% if @post_month %>
+  <section class="widget">
+    <div class="wrapper">
+      <h3 class="widget-title">Archives</h3>
+      <div class="accordion" id="accordion2">
+        <% @post_month.sort.reverse.each do |month, posts| %>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse">
+                <i class="iconm-plus-3"></i>
+                <%= month.strftime('%B %Y') %>(<%= posts.count %>)
+              </a>
+            </div>
+            <div id="collapse" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul class="the-icons">
+                  <% for post in posts %>
+                    <li><i class="iconm-link-3"></i><%= link_to post.title,  post %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+

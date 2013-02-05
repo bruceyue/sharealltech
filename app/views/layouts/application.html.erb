@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShareAllTech</title>
+    <%= stylesheet_link_tag    :application %>
+    <%= javascript_include_tag :application %>
+    <%= csrf_meta_tags %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=100%, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <link rel="shortcut icon" href="../assets/favicon.ico" >
+  </head>
+  <body>
+    <!-- start: Top Menu -->
+    <%= render "common/social" %>
+    <!-- end: Top Menu -->
+
+    <!-- start: Header -->
+    <%= render "common/menu" %>
+    <!-- end: Header -->
+
+    <!-- start: Container -->
+    <div class="container">
+      <div class="row-fluid">
+
+        <!-- start: Page section -->
+        <section id="page-sidebar" class="pull-left span8">
+          <!-- start: Wrapper -->
+          <div class="wrapper">
+            <!-- start: posts-->
+            <%= yield %>
+            <!-- end: posts-->
+          </div>
+          <!-- end: Wrapper -->
+        </section>
+        <!-- end: Page section -->
+
+        <!-- start: Sidebar -->
+        <aside id="sidebar" class="pull-right span4">
+            <!-- start: Search widget -->
+            <%= render "common/search_form" %>
+            <!-- end: Search widget -->
+
+            <!-- start: Popular posts -->
+            <%= render "common/latest_post" %>
+            <!-- end: Popular posts -->
+
+            <!-- start: Blog Archives -->
+            <%= render "common/recent_years" %>
+            <!-- end: Blog Archives / Accordion -->
+
+            <!-- start: Tag Cloud -->
+            <%= render "common/tags" %>
+            <!-- end: Tag Cloud -->
+        </aside>
+        <!-- end: Sidebar -->
+
+      </div>
+
+      <!-- start: Footer -->
+      <%= render "common/footer" %>
+      <!-- end: Footer -->
+
+    </div>
+    <!-- end: Container -->
+
+  </body>
+</html>

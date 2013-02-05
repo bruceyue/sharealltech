@@ -1,0 +1,25 @@
+<% if Post.order('created_at DESC').size != 0 %>
+  <section class="widget popular-posts">
+    <div class="wrapper">
+      <h3 class="widget-title">Popular Tech</h3>
+      <% Post.order('created_at DESC').limit(5).each do |post| %>
+        <div class="media">
+          <a class="pull-left" href="#">
+            <% if (post.user && post.user.email) %>
+              <%= gravatar_image_tag post.user.email, alt: post.user.name %>
+            <% else %>
+              <%= image_tag('avatar.png', height: 55, width: 55)%>
+            <% end %>
+            <span class="frame-overlay"></span>
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading"><%= link_to post.title, post %></h4>
+            <p>
+              <%= markdown(post.body).truncate(40, :omission => "......").html_safe %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </section>
+<% end %>

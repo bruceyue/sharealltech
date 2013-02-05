@@ -1,0 +1,10 @@
+<% if !user_signed_in? %>
+  <li>
+    <%= form_tag("/auth/salesforce", id: "loginForm", style: "height:5px") do %>
+      <a href="javascript:{}" onclick="document.getElementById('loginForm').submit()" >Login with Salesforce</a>
+    <% end %>
+  </li>
+<% else %>
+  <li><%= current_user.name %></li>
+  <li><a href="/logout">&nbsp; Sign Out</a></li>
+<% end %>
