@@ -14,9 +14,6 @@
           </a>
           <div class="media-body">
             <h4 class="media-heading"><%= link_to post.title, post %></h4>
-            <p>
-              <%= markdown(post.body).truncate(40, :omission => "......").html_safe %>
-            </p>
           </div>
         </div>
       <% end %>
