@@ -1,21 +1,24 @@
 ShareAllTech::Application.routes.draw do
+
+  root :to => 'posts#index'
+
+  resources :posts do
+    resources :comments
+  end
+
+  get 'tags/:tag', to: 'posts#index', as: :tag
+
   get "about_us/aboutus"
 
   get "contact/contactus"
 
   devise_for :users
 
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
-  get 'tags/:tag', to: 'posts#index', as: :tag
-
-  resources :posts do
-    resources :comments
-  end
-
   match '/auth/:provider/callback' => 'sessions#create', :as => :oauth_callback
   match '/auth/failure' => 'sessions#failure'
   match '/logout' => 'sessions#destroy', :as => :logout
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -66,7 +69,7 @@ ShareAllTech::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'posts#index'
+
 
   # See how all your routes lay out with "rake routes"
 

@@ -69,7 +69,7 @@ a {
 
 body {
   padding:0;
-  background:#ececef url(bg.jpeg)
+  background:#ececef url(noise-bg.png)
 }
 
 @media (max-width: 767px) {
@@ -176,7 +176,8 @@ a:hover {
 
 #menu a {
   display:block;
-  color:#fff
+  color:#fff;
+  font-size: 18px;
 }
 
 #menu ul {
@@ -1273,7 +1274,8 @@ section.breadcrumbs .table .table-cell {
   width:100%;
   background-color:#696969;
   border-color:#696969;
-  color:#fff
+  color:#fff;
+  background:#696969 url(search-bt.png) 98% center no-repeat
 }
 
 #search input[type="text"]:focus,#search input[type="text"]:hover {
@@ -1290,7 +1292,6 @@ section.breadcrumbs .table .table-cell {
   cursor:pointer;
   border:none!important;
   z-index:2;
-  background:#696969 url(search-bt.png) no-repeat center center
 }
 
 #search .search-bt:hover {

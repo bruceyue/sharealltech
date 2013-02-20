@@ -42,8 +42,6 @@ $(document).ready(function(){
     // tooltip
     $("a[rel^='tooltip']").tooltip();
 
-    //$('#menuHomeLink').addClass('current');
-
     //Menu
     jQuery('#menu > ul').superfish({
         delay:       0,
