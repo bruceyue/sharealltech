@@ -12,6 +12,10 @@ ShareAllTech::Application.routes.draw do
 
   get "contact/contactus"
 
+  get "info/aboutus"
+
+  get "info/contactus"
+
   devise_for :users
 
   match '/auth/:provider/callback' => 'sessions#create', :as => :oauth_callback

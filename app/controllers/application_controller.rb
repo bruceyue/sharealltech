@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   def seach_months_post
     @posts = Post.order('created_at DESC').limit(200)
     @post_month = @posts.group_by { |p| p.created_at.beginning_of_month }
+    fresh_when(:etag => @post_month, :public => true)
   end
 
   def admin?
@@ -18,6 +19,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    fresh_when(:etag => @current_user)
   end
 
   def user_signed_in?
