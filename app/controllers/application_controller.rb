@@ -19,7 +19,6 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    fresh_when(:etag => @current_user)
   end
 
   def user_signed_in?
