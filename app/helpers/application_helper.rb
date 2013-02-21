@@ -11,8 +11,26 @@ module ApplicationHelper
         :strikethrough =>true
     }
 		markdown = Redcarpet::Markdown.new(HTMLwithCodeRay, options)
-		markdown.render(text.to_s).html_safe
+		markdown.render(replace_emoji(text.to_s)).html_safe
 	end
+
+  def replace_emoji(text)
+    text.gsub(/:(\S+):/) do |emoji|
+
+      emoji_code = emoji #.gsub("|", "_")
+      emoji      = emoji_code.gsub(":", "")
+
+      if MdEmoji::EMOJI.include?(emoji)
+        file_name    = "#{emoji.gsub('+', 'plus')}.png"
+        default_size = %{height="20" width="20"}
+
+        %{<img src="/assets/emojis/#{file_name}" class="emoji" } +
+          %{title="#{emoji_code}" alt="#{emoji_code}" #{default_size}>}
+      else
+        emoji_code
+      end
+    end
+  end
 
   class HTMLwithCodeRay < Redcarpet::Render::HTML
     def block_code(code, language)

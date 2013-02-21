@@ -45,6 +45,7 @@ gem 'devise' #Users management
 gem 'redcarpet' #markdown
 gem 'coderay' #syntax highlight
 gem 'will_paginate', '3.0.2'
+gem 'md_emoji'
 
 
 # To use Truncate_html for cutting off a string of HTML
