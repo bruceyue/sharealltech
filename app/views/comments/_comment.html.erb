@@ -1,5 +1,5 @@
 <article class="comment">
-	<a class="comment-img" href="#non">
+	<a class="comment-img" href="#">
 		<%= gravatar_image_tag comment.user.email, alt: comment.user.name %>
 		<!--<img src="/assets/guest.jpeg" alt="" width="50" height="50" />-->
 	</a>
@@ -9,9 +9,9 @@
 		</div>
 		<p class="attribution">
 			<% if comment.user %>
-				by <a href="#non"><%= comment.user.name %></a> <%= comment.created_at.strftime("at %b %-d, %Y - %k:%M %p") %>
+				by <a href="#"><%= comment.user.name %></a> <%= comment.created_at.strftime("at %b %-d, %Y - %k:%M %p") %>
 			<% else %>
-				by <a href="#non">guest </a> <%= comment.created_at.strftime("at %b %-d, %Y - %k:%M %p") %>
+				by <a href="#">guest </a> <%= comment.created_at.strftime("at %b %-d, %Y - %k:%M %p") %>
 			<% end %>
 			<% if comment.user = current_user %>
 				<%= link_to 'Delete', [comment.post, comment], confirm: 'Are you sure?', method: :delete %>
