@@ -8,13 +8,7 @@ ShareAllTech::Application.routes.draw do
 
   get 'tags/:tag', to: 'posts#index', as: :tag
 
-  get "about_us/aboutus"
-
-  get "contact/contactus"
-
   get "info/aboutus"
-
-  get "info/contactus"
 
   devise_for :users
 
