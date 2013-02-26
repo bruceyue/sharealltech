@@ -10,14 +10,8 @@ class PostsController < ApplicationController
       @posts = Post.search_published(params[:search]).paginate(page: params[:page], per_page: 5)
     else
       @posts = Post.paginate(page: params[:page], per_page: 5).order('created_at DESC')
-      fresh_when(:etag => @posts, :public => true)
     end
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @posts }
-      format.js
-    end
+    fresh_when(:etag => [@posts, @post_month], :public => true)
   end
 
   # GET /posts/1
@@ -25,13 +19,7 @@ class PostsController < ApplicationController
   def show
     seach_months_post
     @post = Post.find(params[:id])
-    fresh_when(:etag => @posts)
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @post }
-      format.js
-    end
+    fresh_when(:etag => [@posts, @post_month], :public => true)
   end
 
   # GET /posts/new
