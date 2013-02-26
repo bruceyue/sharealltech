@@ -1,7 +1,6 @@
 class InfoController < ApplicationController
-  def aboutus
-  end
+  caches_page :aboutus
 
-  def contactus
+  def aboutus
   end
 end
