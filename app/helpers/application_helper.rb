@@ -62,11 +62,11 @@ module ApplicationHelper
     agent_str =~ Regexp.new(MOBILE_USER_AGENTS)
   end
 
-  def tag_cloud(tags, classes)
+  def tag_cloud(tags)
     max = tags.max_by(&:count)
     tags.each do |tag|
-      index = tag.count.to_f / Integer(max.count) * (classes.size - 1)
-      yield(tag, classes[index.round])
+      index = tag.count.to_f / Integer(max.count)
+      yield(tag)
     end
   end
 end

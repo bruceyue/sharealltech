@@ -2,7 +2,7 @@
   <div class="wrapper">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="tags">
-    	<% tag_cloud Post.tag_counts.uniq, %w[s m l] do |tag| %>
+    	<% tag_cloud Post.tag_counts.uniq do |tag| %>
         <a href="<%= tag_path(tag.name) %>"><i class="icon-tag"></i><%= tag.name %></a>
       <%end%>
     </div>
