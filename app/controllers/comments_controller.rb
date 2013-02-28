@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     @comment.save
     #Databasedotcom::Chatter::UserProfileFeed.post(@client, current_user.sf_user_id, :text => @comment.body, :url => request.referer)
     #fresh_when(:etag => [@post, @comment], :public => true)
+    CommentMailer.comment_email(@post).deliver
     respond_to do |format|
       format.html { redirect_to post_path(@post)}
       format.js { render :nothing => true }
