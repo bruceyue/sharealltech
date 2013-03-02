@@ -7,12 +7,12 @@
         <% @post_month.sort.reverse.each do |month, posts| %>
           <div class="accordion-group">
             <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= month.strftime('%B%Y') %>" >
                 <i class="iconm-plus-3"></i>
                 <%= month.strftime('%B %Y') %> (<%= posts.count %>)
               </a>
             </div>
-            <div id="collapse" class="accordion-body collapse">
+            <div id="collapse<%= month.strftime('%B%Y')%>" class="accordion-body collapse">
               <div class="accordion-inner">
                 <ul class="the-icons">
                   <% for post in posts %>
