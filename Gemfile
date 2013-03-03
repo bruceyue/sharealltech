@@ -46,7 +46,8 @@ gem 'redcarpet' #markdown
 gem 'coderay' #syntax highlight
 gem 'will_paginate', '3.0.2'
 gem 'md_emoji'
-
+gem 'carrierwave' # image upload
+gem 'cloudinary' # image store
 
 # To use Truncate_html for cutting off a string of HTML
 # See https://github.com/hgmnz/truncate_html

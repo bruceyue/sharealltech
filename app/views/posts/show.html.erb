@@ -26,6 +26,9 @@
       <%= markdown @post.body %>
     </p>
   </div>
+  <div class="post-media">
+    <% unless @post.picture_url.nil? %><%= image_tag @post.picture_url %><br /><% end %>
+  </div>
 </article>
 <br />
 <article class="blog-post">
