@@ -11,33 +11,29 @@
   </ul>
 </div>
 <% end %>
-<table cellspacing ="0" cellpadding ="0" class="table">
-  <tr>
-    <td>
-      <div class="field">
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">
-        <%= f.label :tag_list, "Tags (separated by commas)" %>
-        <%= f.text_field :tag_list %>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">
-        <%= f.label :body %> <h3 style="color:red"><%= f.file_field :picture, class: "btn-large" %>[Picture]</h3>
-        <%= f.text_area :body, rows: 8, class: "tabletd" %>
-        <%= link_to "Markdown Syntax", "http://bywordapp.com/markdown/syntax.html", :target => "_blank" %>
-        支持表情，见 <%= link_to "Emoji cheat sheet", "http://www.emoji-cheat-sheet.com/", :target => "_blank"%>
-        <%= f.submit "Save", class: "btn-large", style: "float:right;"%>
-      </div>
-    </td>
-  </tr>
-</table>
+<div class="row-fluid">
+  <div class="af-outer af-required">
+    <div class="af-inner">
+      <%= f.text_field :title, size: 30, placeholder: "Title", class: "text-input span12 placeholder" %>
+    </div>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="af-outer af-required">
+    <div class="af-inner">
+      <%= f.text_field :tag_list, placeholder: "Tags (separated by commas)", class: "text-input span12 placeholder", style: "width:360px" %>
+      <h4 style="color:red;"><%= f.file_field :picture, style: "line-height: 0; height: 25px;", id: "sat-picture" %>[Picture]</h4>
+    </div>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="af-outer af-required">
+    <div class="af-inner">
+      <%= f.text_area :body, cols: 30, placeholder: "Body", class: "text-input span12 placeholder", id: "sat-post-body" %>
+      <%= link_to "Markdown Syntax", "http://bywordapp.com/markdown/syntax.html", :target => "_blank" %>
+      支持表情，见 <%= link_to "Emoji cheat sheet", "http://www.emoji-cheat-sheet.com/", :target => "_blank"%>
+      <%= f.submit "Save", class: "form-button btn btn-primary", style: "float:right;"%>
+    </div>
+  </div>
+</div>
 <% end %>
