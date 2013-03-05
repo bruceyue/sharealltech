@@ -286,6 +286,11 @@ a:hover {
   background-color:#555
 }
 
+.slides img{
+  height:500px;
+  width:760px
+}
+
 .flexslider {
   position:relative
 }
@@ -317,7 +322,7 @@ a:hover {
 }
 
 .loading .flex-viewport {
-  max-height:300px
+  max-height:400px
 }
 
 @media (max-width: 767px) {
@@ -557,7 +562,7 @@ a:hover {
 .flex-direction-nav .flex-prev {
   background:url(arrow-slider-left.png) no-repeat 50% 50%;
   left:0;
-  background-color:#000
+  background-color: green
 }
 
 .flex-direction-nav .flex-prev:hover {
@@ -570,7 +575,7 @@ a:hover {
 .flex-direction-nav .flex-next {
   background:url(arrow-slider-right.png) no-repeat 50% 50%;
   right:0;
-  background-color:#000
+  background-color:green
 }
 
 .flex-direction-nav .flex-next:hover {

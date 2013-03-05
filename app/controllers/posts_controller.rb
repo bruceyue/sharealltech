@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_filter :require_user, :except => [:index, :show]
+  caches_page :index, :show
   # GET /posts
   # GET /posts.json
   def index
