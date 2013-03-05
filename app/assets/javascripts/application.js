@@ -19,10 +19,10 @@ $(document).ready(function(){
 	// Slider
     $("#mainslider").flexslider({
         animation: "slide",
-        slideshow: false, // ***
-        useCSS: false,
+        slideshow: true, // ***
+        useCSS: true,
         controlNav: true,
-        animationLoop: false,
+        animationLoop: true,
         smoothHeight: true
     });
     // LayerSlider

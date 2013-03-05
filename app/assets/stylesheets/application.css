@@ -562,7 +562,6 @@ a:hover {
 .flex-direction-nav .flex-prev {
   background:url(arrow-slider-left.png) no-repeat 50% 50%;
   left:0;
-  background-color: green
 }
 
 .flex-direction-nav .flex-prev:hover {
@@ -575,7 +574,6 @@ a:hover {
 .flex-direction-nav .flex-next {
   background:url(arrow-slider-right.png) no-repeat 50% 50%;
   right:0;
-  background-color:green
 }
 
 .flex-direction-nav .flex-next:hover {
