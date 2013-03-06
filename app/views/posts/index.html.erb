@@ -17,8 +17,9 @@
                 <li><span class="post-meta-label">Tags:</span> <%= raw post.tags.map { |t| link_to t.name, tag_path(t.name) }.join(', ') %></li>
               <% end %>
               <% if post.comments.count != 0 %>
-              <li><span class="post-meta-label">Comments:</span> <%= link_to post.comments.count,  post %> Comments </li>
+              <li><span class="post-meta-label">Comments:</span> <%= link_to post.comments.count,  post %> </li>
               <% end %>
+              <li><i class="icon-thumbs-up"></i></li>
             </ul>
         </div>
     </div>
