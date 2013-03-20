@@ -1,6 +1,6 @@
 Cloudinary.config do |config|
   config.cloud_name = 'sharealltech'
-  config.api_key = '948955665549465'
-  config.api_secret = 'm-1I2pDfn-MpM1lJSV1wNKgkQn0'
+  config.api_key = ENV['CD_KEY']
+  config.api_secret = ENV['CD_SECRET']
   config.cdn_subdomain = true
 end

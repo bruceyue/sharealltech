@@ -48,7 +48,9 @@ class PostsController < ApplicationController
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
-        Databasedotcom::Chatter::UserProfileFeed.post(@client, current_user.sf_user_id, :text => @post.title, :url => (request.url+'/'+@post.id.to_s))
+        if current_user != nil && current_user.sf_user_id != nil
+          Databasedotcom::Chatter::UserProfileFeed.post(@client, current_user.sf_user_id, :text => @post.title, :url => (request.url+'/'+@post.id.to_s))
+        end
       else
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }

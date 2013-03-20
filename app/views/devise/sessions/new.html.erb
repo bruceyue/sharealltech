@@ -1,35 +1,29 @@
-<h2>Sign in</h2>
+<article class="blog-post">
+  <div class="row-fluid">
+<h2>Login</h2>
+<h4>If you come to here the first time, click Login with Salesforce <i class="icon-resize-full"></i> at the top.</h4>
 <hr/>
-
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-horizontal"}) do |f| %>
-  <div class="control-group">
-    <%= f.label :email, class: "control-label" %>
-      <div class="controls">
-      <%= f.email_field :email, placeholder: "Email" %>
-    </div>
+<div class="login-left-block">
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div class="register-input-block email">
+    <%= f.email_field :email, placeholder: "Email" %>
   </div>
 
-  <div class="control-group">
-    <%= f.label :password, class: "control-label" %>
-    <div class="controls">
-      <%= f.password_field :password, placeholder: "Password" %>
-    </div>
+  <div class="register-input-block password">
+    <%= f.password_field :password, placeholder: "Password" %>
   </div>
 
-  <div class="control-group">
-    <div class="controls">
+  <div class="login-remember-block">
+    <div id="login_remember_div" class="checkboxOff">
       <% if devise_mapping.rememberable? -%>
-        <label class="checkbox">
-          <%= f.check_box :remember_me %> Remember me
-        </label>
+        <%= f.check_box :remember_me, class: "checkboxOn", id: "loginCheckBox"%>
       <% end -%>
-      <%= f.submit "Sign in", class: "btn" %>
     </div>
+    <div class="register-terms-text login-size">Remember me</div>
   </div>
 
-  <div class="control-group">
-    <div class="controls">
-      <a href="/users/password/new" style="text-decoration: none;">Forgot your password?</a>
-    </div>
-  </div>
+  <%= f.submit "Login", class: "login-button" %>
 <% end %>
+</div>
+</div>
+</article>

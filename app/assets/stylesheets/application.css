@@ -1835,3 +1835,112 @@ label.error,label.ferror {
 @media (max-width: 480px) {
 
 }
+
+.login-left-block {
+    float: left;
+    width: 50%;
+    margin-left: 30px;
+}
+
+.register-input-block {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: white;
+    border: 5px solid #888788 !important;
+    border-radius: 6px 6px 6px 6px;
+    height: 50px !important;
+    margin-top: 30px !important;
+    padding: 7px 7px 0 43px !important;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.register-input-block input {
+    background-color: white;
+    border: 0 none !important;
+    color: #717171;
+    font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    margin: 0 !important;
+    outline: medium none !important;
+    width: 100%;
+    box-shadow: none !important;
+    padding: 3px !important;
+}
+
+.register-input-block.email {
+    background-image: url("login.png");
+    background-position: 10px -50px;
+    background-repeat: no-repeat;
+}
+
+.register-input-block.password {
+    background-image: url("login.png");
+    background-position: 7px -102px;
+    background-repeat: no-repeat;
+}
+
+.login-remember-block{
+    float: left;
+    margin: 40px 0 0;
+}
+
+.checkboxOff {
+    background-image: url("login.png");
+    background-position: left -167px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    float: left;
+    height: 30px;
+    width: 30px;
+}
+
+.checkboxOff input[type="checkbox"] {
+    -moz-appearance: none;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.login-button, a.login-button, a.login-button:link, a.login-button:visited, a.login-button:active {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: gray;
+    border-radius: 4px 4px 4px 4px;
+    color: white;
+    display: block;
+    float: right;
+    font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    height: 40px;
+    line-height: 36px;
+    margin-top: 35px;
+    padding: 1px 0 0;
+    text-align: center;
+    width: 45% !important;
+    text-decoration: none;
+}
+
+.register-terms-text {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #3F3E3E;
+    display: table-cell;
+    font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    height: 30px;
+    line-height: 16px;
+    padding: 0 0 0 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.register-terms-text.login-size {
+    width: 170px;
+}
