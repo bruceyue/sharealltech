@@ -116,3 +116,10 @@ $(document).ready(function(){
     });
 
 });
+
+function logincheckboxCheck(ch_id)
+{
+    var ch_div = 'login_remember_div';
+    if (document.getElementById(ch_id).checked)  document.getElementById(ch_div).className="checkboxOff";
+    else document.getElementById(ch_div).className="checkboxOn";
+}

@@ -1871,13 +1871,13 @@ label.error,label.ferror {
 }
 
 .register-input-block.email {
-    background-image: url("login.png");
+    background-image: url(login.png);
     background-position: 10px -50px;
     background-repeat: no-repeat;
 }
 
 .register-input-block.password {
-    background-image: url("login.png");
+    background-image: url(login.png);
     background-position: 7px -102px;
     background-repeat: no-repeat;
 }
@@ -1888,10 +1888,18 @@ label.error,label.ferror {
 }
 
 .checkboxOff {
-    background-image: url("login.png");
+    background-image: url(login.png);
     background-position: left -167px;
     background-repeat: no-repeat;
-    cursor: pointer;
+    float: left;
+    height: 30px;
+    width: 30px;
+}
+
+.checkboxOn {
+    background-image: url(login.png);
+    background-position: left -215px;
+    background-repeat: no-repeat;
     float: left;
     height: 30px;
     width: 30px;
@@ -1899,6 +1907,19 @@ label.error,label.ferror {
 
 .checkboxOff input[type="checkbox"] {
     -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.checkboxOn input[type="checkbox"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
     margin: 0;
     opacity: 0;
     padding: 0;

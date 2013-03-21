@@ -1,7 +1,7 @@
 <article class="blog-post">
   <div class="row-fluid">
 <h2>Login</h2>
-<h4>If you come to here the first time, click Login with Salesforce <i class="icon-resize-full"></i> at the top.</h4>
+<h4>If you come to here the first time, click <a>Login with Salesforce</a> <i class="icon-resize-full"></i> at the top.</h4>
 <hr/>
 <div class="login-left-block">
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -14,10 +14,10 @@
   </div>
 
   <div class="login-remember-block">
-    <div id="login_remember_div" class="checkboxOff">
-      <% if devise_mapping.rememberable? -%>
-        <%= f.check_box :remember_me, class: "checkboxOn", id: "loginCheckBox"%>
-      <% end -%>
+    <div id="login_remember_div" class="checkboxOn">
+      <% if devise_mapping.rememberable? %>
+        <%= f.check_box :remember_me, class: "checkboxOn", id: "login_remember", onclick: "logincheckboxCheck('login_remember')"%>
+      <% end %>
     </div>
     <div class="register-terms-text login-size">Remember me</div>
   </div>
