@@ -114,12 +114,4 @@ $(document).ready(function(){
             $(e.target).prev('.accordion-heading').find('i').addClass('iconm-plus-3');
         });
     });
-
 });
-
-function logincheckboxCheck(ch_id)
-{
-    var ch_div = 'login_remember_div';
-    if (document.getElementById(ch_id).checked)  document.getElementById(ch_div).className="checkboxOff";
-    else document.getElementById(ch_div).className="checkboxOn";
-}

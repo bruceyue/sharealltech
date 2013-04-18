@@ -19,14 +19,14 @@
               <% if post.comments.count != 0 %>
               <li><span class="post-meta-label">Comments:</span> <%= link_to post.comments.count,  post %> </li>
               <% end %>
-              <li><i class="icon-thumbs-up"></i></li>
+              <li><i class="icon-thumbs-up"></i><%= post.likes.count %></li>
             </ul>
         </div>
     </div>
     <div class="post-content">
       <p>
         <%= markdown(post.body).truncate(800, :omission => "......").html_safe %><br/>
-        <%= link_to 'Read More', post, class: 'btn btn-primary', style: "float:right" %>
+        <%= link_to 'Read More...', post, class: 'btn-link', style: "float:right" %>
       </p>
     </div>
   </article>
