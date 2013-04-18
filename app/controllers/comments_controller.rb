@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
       format.html { redirect_to post_path(@post)}
       format.js
     end
-    CommentMailer.comment_email(@post).deliver
+    #CommentMailer.comment_email(@post).deliver
   end
 
   def destroy
