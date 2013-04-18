@@ -9,6 +9,7 @@ class Post < ActiveRecord::Base
   has_many :tags, through: :taggings
   attr_accessible :tag_ids, :comment_ids, :user_id
   belongs_to :user
+  has_many :likes
 
   attr_accessible :picture
   mount_uploader :picture, PictureUploader

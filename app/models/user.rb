@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   has_many :comments
   has_many :posts
+  has_many :likes
 
   def self.find_or_create_context_user(auth_hash, signed_in_resource = nil)
     user = User.find_by_identity_url(auth_hash['uid']) ? User.find_by_identity_url(auth_hash['uid']) : User.where(:email => auth_hash['extra']['email']).first
@@ -54,10 +55,7 @@ class User < ActiveRecord::Base
     read_attribute(:access_token).decrypt
   end
 
-  # Returns a URL to the photo for the logged-in user.
-  def self.find_photo(client, sf_user_id, api_version)
-    url = "/services/data/v#{api_version}/chatter/users/#{sf_user_id}/photo"
-    result = client.http_get(url)
-    JSON.parse(result.body)
+  def has_like? post
+    likes.find_by_post_id post.id
   end
 end
