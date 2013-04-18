@@ -1,7 +1,10 @@
 <article class="comment">
 	<a class="comment-img" href="#">
-		<%= gravatar_image_tag comment.user.email, alt: comment.user.name %>
-		<!--<img src="/assets/guest.jpeg" alt="" width="50" height="50" />-->
+		<% if comment.user %>
+			<%= gravatar_image_tag comment.user.email, alt: comment.user.name %>
+		<% else %>
+			<img src="/assets/df.png" alt="" width="50" height="50" />
+		<% end %>
 	</a>
 	<div class="comment-body">
 		<div class="text">
@@ -14,7 +17,7 @@
 				by <a href="#">guest </a> <%= comment.created_at.strftime("at %b %-d, %Y - %k:%M %p") %>
 			<% end %>
 			<% if comment.user = current_user %>
-				<%= link_to 'Delete', [comment.post, comment], confirm: 'Are you sure?', method: :delete %>
+				<%= link_to 'Delete', [comment.post, comment], confirm: 'Are you sure?', method: :delete, remote: true %>
 			<% end %>
 		</p>
 	</div>

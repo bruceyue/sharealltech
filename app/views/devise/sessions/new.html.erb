@@ -14,9 +14,9 @@
   </div>
 
   <div class="login-remember-block">
-    <div id="login_remember_div" class="checkboxOn">
+    <div id="login_remember_div" class="checkboxOff">
       <% if devise_mapping.rememberable? %>
-        <%= f.check_box :remember_me, class: "checkboxOn", id: "login_remember", onclick: "logincheckboxCheck('login_remember')"%>
+        <%= f.check_box :remember_me, onclick: "logincheckboxCheck()", class: "checkboxOn", id: "login_remember" %>
       <% end %>
     </div>
     <div class="register-terms-text login-size">Remember me</div>
@@ -27,3 +27,15 @@
 </div>
 </div>
 </article>
+<script>
+  function logincheckboxCheck()
+  {
+      var ch_div = '#login_remember_div';
+      if ($('#login_remember').is(':checked')) {
+        $(ch_div).addClass("checkboxOn");
+      } else {
+        $(ch_div).removeClass("checkboxOn");
+        $(ch_div).addClass("checkboxOff");
+      }
+  }
+</script>

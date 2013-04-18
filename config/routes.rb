@@ -4,6 +4,7 @@ ShareAllTech::Application.routes.draw do
 
   resources :posts do
     resources :comments
+    resources :likes, :only => [:create, :destroy]
   end
 
   get 'tags/:tag', to: 'posts#index', as: :tag
@@ -17,7 +18,7 @@ ShareAllTech::Application.routes.draw do
   match '/auth/failure' => 'sessions#failure'
   match '/logout' => 'sessions#destroy', :as => :logout
 
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin', :only => [:admin?]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

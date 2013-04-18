@@ -16,9 +16,13 @@
               <li><span class="post-meta-label">Tags:</span> <%= raw @post.tags.map { |t| link_to t.name, tag_path(t.name) }.join(', ') %></li>
             <% end %>
             <% if @post.comments.count != 0 %>
-            <li><span class="post-meta-label">Comments:</span> <%= link_to @post.comments.count,  @post %></li>
+            <li><span class="post-meta-label">Comments:</span> <%= link_to @comment_count,  @post %></li>
             <% end %>
-            <li><i class="icon-thumbs-up"></i></li>
+            <li>
+              <span id="like">
+                <%= render 'likes/like_button', :post => @post %>
+              </span>
+            </li>
           </ul>
       </div>
   </div>
@@ -34,7 +38,7 @@
 <br />
 <article class="blog-post">
   <h6>
-    <%= @post.comments.count %> Comments
+    <%= @comment_count %> Comments
     <% if !user_signed_in? %>
       <%= form_tag("/auth/salesforce", id: "loginForm", style: "float:right;") do %>
         <a href="javascript:{}" onclick="document.getElementById('loginForm').submit()">Sign in through Salesforce to comment</a>
@@ -44,5 +48,7 @@
   <section class="comments">
     <%= render @post.comments %>
   </section>
-  <%= render "comments/form" %>
+  <div id="comment_box">
+    <%= render "comments/form" %>
+  </div>
 </article>
