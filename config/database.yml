@@ -4,7 +4,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: b3jblog
+  database: sat
   pool: 5
   username: postgres
   password: bruceyue
@@ -30,7 +30,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: b3jblog_test
+  database: sat_test
   pool: 5
   username: b3j-blog
   password:
