@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_filter :require_user, :except => [:index, :show]
-  caches_page :show
   # GET /posts
   # GET /posts.json
   def index
@@ -21,7 +20,7 @@ class PostsController < ApplicationController
     seach_months_post
     @post = Post.find(params[:id])
     @comment_count = @post.comments.count
-    #fresh_when(:etag => [@posts, @post_month], :public => true)
+    fresh_when(:etag => [@posts, @post_month], :public => true)
   end
 
   # GET /posts/new
