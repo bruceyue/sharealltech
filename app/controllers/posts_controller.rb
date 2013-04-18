@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     seach_months_post
     @post = Post.find(params[:id])
     @comment_count = @post.comments.count
-    fresh_when(:etag => [@posts, @post_month], :public => true)
+    #fresh_when(:etag => [@posts, @post_month], :public => true)
   end
 
   # GET /posts/new
