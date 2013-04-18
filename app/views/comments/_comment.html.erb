@@ -16,7 +16,7 @@
 			<% else %>
 				by <a href="#">guest </a> <%= comment.created_at.strftime("at %b %-d, %Y - %k:%M %p") %>
 			<% end %>
-			<% if comment.user = current_user %>
+			<% if comment.user.name = current_user.name %>
 				<%= link_to 'Delete', [comment.post, comment], confirm: 'Are you sure?', method: :delete, remote: true %>
 			<% end %>
 		</p>
