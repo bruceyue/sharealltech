@@ -19,7 +19,7 @@
               <% if post.comments.count != 0 %>
               <li><span class="post-meta-label">Comments:</span> <%= link_to post.comments.count,  post %> </li>
               <% end %>
-              <li><i class="icon-thumbs-up"></i></li>
+              <li><i class="icon-thumbs-up"></i><%= post.likes.count %></li>
             </ul>
         </div>
     </div>
