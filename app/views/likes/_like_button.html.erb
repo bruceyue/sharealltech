@@ -1,7 +1,6 @@
 <%= form_for [@post, @post.likes.build], remote: true do |f| %>
 	<button type="submit" style="padding: 0" name="button" class="btn btn-link">
 		<i class="icon-thumbs-up"></i>
-		<%= @post.likes.count %>
-		<a><%= notice %></a>
+		<%= @post.likes.count %>&nbsp;<a href="#"><%= notice %></a>
 	</button>
 <% end %>
