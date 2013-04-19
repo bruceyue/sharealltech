@@ -46,7 +46,7 @@
     <% end %>
   </h6>
   <section class="comments">
-    <%= render @post.comments %>
+    <%= render @post.comments.order("created_at") %>
   </section>
   <div id="comment_box">
     <%= render "comments/form" %>
