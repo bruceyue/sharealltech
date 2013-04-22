@@ -1,0 +1,22 @@
+<section class="widget">
+  <div class="wrapper">
+    <h3 class="widget-title">Advertisement</h3>
+    <div id="latestwork-sidebar" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="active item"><%= image_tag("bruce.jpg")%></div>
+          <div class="item"><%= image_tag("team3.jpg")%></div>
+          <div class="item"><%= image_tag("team2.jpg")%></div>
+          <div class="item"><%= image_tag("team4.jpg")%></div>
+        </div>
+        <a class="carousel-control left" href="#latestwork-sidebar" data-slide="prev"></a>
+        <a class="carousel-control right" href="#latestwork-sidebar" data-slide="next"></a>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('.carousel').carousel({
+            interval: 5000
+        })
+    });
+  </script>
+</section>

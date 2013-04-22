@@ -1965,3 +1965,23 @@ label.error,label.ferror {
 .register-terms-text.login-size {
     width: 170px;
 }
+
+.carousel-control {
+    border: medium none;
+    bottom: 5px;
+    height: 26px;
+    left: inherit;
+    position: absolute;
+    top: inherit;
+    width: 26px;
+    opacity: 0.4;
+    left: 270px
+}
+.carousel-control.left {
+    background: url("arrow-left.png") no-repeat scroll center center rgba(54, 55, 56, 0.7);
+    right: 34px;
+}
+.carousel-control.right {
+    background: url("arrow-right.png") no-repeat scroll center center rgba(54, 55, 56, 0.7);
+    right: 4px;
+}
