@@ -10,7 +10,7 @@
  * CHANGELOG: http://users.tpg.com.au/j_birch/plugins/superfish/changelog.txt
  */
 
-;(function($){
+(function($){
 	$.fn.superfish = function(op){
 
 		var sf = $.fn.superfish,
@@ -61,7 +61,7 @@
 
 		}).each(function() {
 			var menuClasses = [c.menuClass];
-			if (sf.op.dropShadows  && !($.browser.msie && $.browser.version < 7)) menuClasses.push(c.shadowClass);
+			if (sf.op.dropShadows ) menuClasses.push(c.shadowClass);
 			$(this).addClass(menuClasses.join(' '));
 		});
 	};
@@ -69,11 +69,6 @@
 	var sf = $.fn.superfish;
 	sf.o = [];
 	sf.op = {};
-	sf.IE7fix = function(){
-		var o = sf.op;
-		if ($.browser.msie && $.browser.version > 6 && o.dropShadows && o.animation.opacity!=undefined)
-			this.toggleClass(sf.c.shadowClass+'-off');
-		};
 	sf.c = {
 		bcClass     : 'sf-breadcrumb',
 		menuClass   : 'sf-js-enabled',
@@ -111,9 +106,8 @@
 				sh = sf.c.shadowClass+'-off',
 				$ul = this.addClass(o.hoverClass)
 					.find('>ul:hidden').css('visibility','visible');
-			sf.IE7fix.call($ul);
 			o.onBeforeShow.call($ul);
-			$ul.animate(o.animation,o.speed,function(){ sf.IE7fix.call($ul); o.onShow.call($ul); });
+			$ul.animate(o.animation,o.speed,function(){ o.onShow.call($ul); });
 			return this;
 		}
 	});

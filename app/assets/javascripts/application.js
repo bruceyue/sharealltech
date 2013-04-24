@@ -36,7 +36,6 @@ $(document).ready(function(){
 
     // Disable href="#" links
     $('a').click(function(){if ($(this).attr('href') == '#') {return false;}});
-    $('a').live('click', function(){if ($(this).attr('href') == '#') {return false;}});
     $('a').css('text-decoration', 'none');
 
     // tooltip
