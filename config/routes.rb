@@ -11,6 +11,7 @@ ShareAllTech::Application.routes.draw do
 
   get 'info/aboutus'
   get 'info/projects'
+  get 'info/spider'
 
   devise_for :users
 
