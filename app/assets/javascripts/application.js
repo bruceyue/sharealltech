@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require verlet-js/vec2
+//= require verlet-js/constraint
+//= require verlet-js/verlet
+//= require verlet-js/objects
 //= require_tree .
 
 $(document).ready(function(){
