@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require verlet-js/vec2
+//= require verlet-js/constraint
+//= require verlet-js/verlet
+//= require verlet-js/objects
 //= require_tree .
 
 $(document).ready(function(){
@@ -36,7 +40,6 @@ $(document).ready(function(){
 
     // Disable href="#" links
     $('a').click(function(){if ($(this).attr('href') == '#') {return false;}});
-    $('a').live('click', function(){if ($(this).attr('href') == '#') {return false;}});
     $('a').css('text-decoration', 'none');
 
     // tooltip

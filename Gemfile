@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -16,6 +16,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'eco' # Embedded CoffeeScript templates
 end
 
 gem 'omniauth-salesforce', ">=1.0.3"
@@ -37,7 +38,7 @@ end
 
 gem 'thin'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.1.0'
 
 gem 'kaminari' # for rails admin bug.
 gem 'rails_admin' # A Rails engine that provides an easy-to-use interface for managing your data.
