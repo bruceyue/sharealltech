@@ -1975,7 +1975,7 @@ label.error,label.ferror {
     top: inherit;
     width: 26px;
     opacity: 0.4;
-    left: 270px
+    left: 260px
 }
 .carousel-control.left {
     background: url("arrow-left.png") no-repeat scroll center center rgba(54, 55, 56, 0.7);
