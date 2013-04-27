@@ -41,7 +41,7 @@ gem 'thin'
 gem 'jquery-rails', '~> 2.1.0'
 
 gem 'kaminari' # for rails admin bug.
-gem 'rails_admin' # A Rails engine that provides an easy-to-use interface for managing your data.
+gem 'rails_admin' , '~> 0.3.0'# A Rails engine that provides an easy-to-use interface for managing your data.
 gem 'devise' #Users management
 gem 'redcarpet' #markdown
 gem 'coderay' #syntax highlight
